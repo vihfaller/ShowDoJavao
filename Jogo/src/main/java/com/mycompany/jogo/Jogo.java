@@ -9,8 +9,19 @@ package com.mycompany.jogo;
  * @author GUILHERMEDIASVILLANO
  */
 public class Jogo {
-
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+
+        // Tela inicial
+        System.out.println("BEM-VINDO AO SHOW DO Javão!");
+        System.out.println("Responda com 'sim' para começar ou 'não' para sair.");
+        
+        String comecar = sc.nextLine();
+        
+        if (!comecar.equalsIgnoreCase("sim")) {
+            System.out.println("Então vamos começar!");
+        }else {
+            System.out.println("Tá bem, até a próxima!");
+            return;
+        }
+}
 }
