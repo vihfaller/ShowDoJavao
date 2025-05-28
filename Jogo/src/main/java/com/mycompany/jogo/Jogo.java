@@ -39,3 +39,4 @@ public class Jogo {
         boolean jogador = true;
     }
 }
+
