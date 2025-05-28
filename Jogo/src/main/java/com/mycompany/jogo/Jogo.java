@@ -3,19 +3,22 @@
  */
 package com.mycompany.jogo;
 
+import java.util.Scanner;
+
 /**
  *
  * @author GUILHERMEDIASVILLANO
  */
 public class Jogo {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         // Tela inicial
         System.out.println("BEM-VINDO AO SHOW DO Javão!");
         System.out.println("Responda com 'sim' para começar ou 'não' para sair.");
         
         String comecar = sc.nextLine();
         
-        if (!comecar.equalsIgnoreCase("sim")) {
+        if (comecar.equalsIgnoreCase("sim")) {
             System.out.println("Então vamos começar!");
         }else {
             System.out.println("Tá bem, até a próxima!");
@@ -36,6 +39,32 @@ public class Jogo {
         };
         
         int pontuacao = 0;
-        boolean jogador = true;
+//        boolean jogador = true;
+        
+        
+        // Tela final
+        System.out.println("\n FIM DE JOGO!");
+        System.out.println("Total de perguntas respondidas: " + Math.min(pontuacao / 10, perguntas.length));
+        System.out.println("Pontuacao final: " + pontuacao + " pontos");
+        
+        System.out.println("Gostaria de saber sua classificacao? Digite 'Sim' para saber ou 'Nao' para sair");
+        
+        String classificacao = sc.nextLine();
+        
+        if (classificacao.equalsIgnoreCase("sim")) {
+            System.out.println("Carregando sua pontuacao!");
+        }else {
+            System.out.println("Ate a proxima!");
+            return;
+        }
+        
+        if (pontuacao >= 80) {
+            System.out.println("Voce foi excelente! Parabens!");
+        } else if (pontuacao >= 50) {
+            System.out.println("Voce foi bem!");
+        } else {
+            System.out.println("Voce nao foi tao bem, quem sabe na proxima!");
+        } return;
+        
     }
 }
